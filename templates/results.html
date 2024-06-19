@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados de la busqueda</title>
+</head>
+<body>
+<h1>Resultados para {{ input_str }}</h1>
+<ul>
+{% for title, url in urls.items() %}
+<li>
+<h2>{{ title }}</h2>
+{% if url == "N/A" %}
+No disponible para URLs.
+{% else %}
+<a href="{{ url }}" target="_blank">{{ url }}</a>
+{% endif %}
+</li>
+{% endfor %}
+</ul>
+<a href="/">Consultar otra IP o URL</a>
+</body>
+</html>
